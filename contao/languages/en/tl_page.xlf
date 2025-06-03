@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file>
+        <body>
+            <trans-unit id="tl_page.analytics_legend">
+                <target>Matomo</target>
+            </trans-unit>
+
+            <trans-unit id="tl_page.analytics_remote_url.0">
+                <target>Instance link</target>
+            </trans-unit>
+            <trans-unit id="tl_page.analytics_remote_url.1">
+                <target>ex: https://analytics.exemple.com</target>
+            </trans-unit>
+
+            <trans-unit id="tl_page.analytics_remote_id.0">
+                <target>Choose corresponding site</target>
+            </trans-unit>
+            <trans-unit id="tl_page.analytics_remote_id.1">
+                <target>If this list is empty, enter the url, your api key, save and comeback here to choose.</target>
+            </trans-unit>
+
+            <trans-unit id="tl_page.analytics_remote_api_key.0">
+                <target>Api Key</target>
+            </trans-unit>
+            <trans-unit id="tl_page.analytics_remote_api_key.1">
+                <target>Api Key to generate on your instance</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
