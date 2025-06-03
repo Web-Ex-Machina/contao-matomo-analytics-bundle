@@ -17,14 +17,13 @@ class LoadAnalyticsListener
     public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string
     {
         $objContent = PageModel::findById($GLOBALS['objPage']->rootId);
-        // TODO : Best solution for recup the data ?
+        // TODO : Best solution for recup the data
 
-        if ($objContent === null) { return $buffer;}
-        elseif (
-                $objContent->analytics_remote_api_key !== ''
-            AND $objContent->analytics_remote_url  !== ''
-            AND $objContent->analytics_remote_id  !== ''
-        ) {
+        if ($objContent === null) {
+            return $buffer;
+        }
+
+        if ($objContent->analytics_remote_api_key !== '' && $objContent->analytics_remote_url !== '' && $objContent->analytics_remote_id !== '') {
             $GLOBALS['TL_HEAD'][] =
                 "
             <!-- Matomo -->
@@ -44,6 +43,7 @@ class LoadAnalyticsListener
             <!-- End Matomo Code -->
             ";
         }
+
         return $buffer;
     }
 }
