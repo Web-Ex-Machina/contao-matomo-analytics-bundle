@@ -2,13 +2,18 @@
 
 declare(strict_types=1);
 
+/*
+ * Matomo Bundle for Contao Open Source CMS
+ * @author     Web Ex Machina
+ *
+ * @see        https://github.com/Web-Ex-Machina/contao-matomo-analytics-bundle
+ * @license    https://www.apache.org/licenses/LICENSE-2.0 Apache 2.0
+ */
+
 namespace WEM\MatomoBundle\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
-use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
-use Symfony\Component\HttpFoundation\RequestStack;
-use WEM\MatomoBundle\Controller\BackendMatomoController;
 
 #[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -255)]
 final readonly class MatomoBackendMenuListener

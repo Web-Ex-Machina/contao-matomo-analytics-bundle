@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+/*
+ * Matomo Bundle for Contao Open Source CMS
+ * @author     Web Ex Machina
+ *
+ * @see        https://github.com/Web-Ex-Machina/contao-matomo-analytics-bundle
+ * @license    https://www.apache.org/licenses/LICENSE-2.0 Apache 2.0
+ */
+
 namespace WEM\MatomoBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -17,10 +25,7 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
-        return [
-            BundleConfig::create(MatomoBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class]),
-        ];
+        return [BundleConfig::create(MatomoBundle::class)->setLoadAfter([ContaoCoreBundle::class])];
     }
 
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)

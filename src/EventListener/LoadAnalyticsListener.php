@@ -1,18 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * Matomo Bundle for Contao Open Source CMS
+ * @author     Web Ex Machina
+ *
+ * @see        https://github.com/Web-Ex-Machina/contao-matomo-analytics-bundle
+ * @license    https://www.apache.org/licenses/LICENSE-2.0 Apache 2.0
+ */
+
 namespace WEM\MatomoBundle\EventListener;
 
-use Contao\ArticleModel;
-use Contao\Controller;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
-use Contao\Module;
-use Contao\Config;
 use Contao\PageModel;
 
 class LoadAnalyticsListener
 {
-
     #[AsHook('parseFrontendTemplate', priority: 100)]
     public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string
     {
@@ -39,7 +44,7 @@ class LoadAnalyticsListener
                 g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
               })();
             </script>
-            <noscript><p><img referrerpolicy='no-referrer-when-downgrade' src='" . $objContent->analytics_remote_url . "/matomo.php?idsite=" . $objContent->analytics_remote_id . "&amp;rec=1' style='border:0;' alt='' /></p></noscript>
+            <noscript><p><img referrerpolicy='no-referrer-when-downgrade' src='" . $objContent->analytics_remote_url . '/matomo.php?idsite=' . $objContent->analytics_remote_id . "&amp;rec=1' style='border:0;' alt='' /></p></noscript>
             <!-- End Matomo Code -->
             ";
         }
