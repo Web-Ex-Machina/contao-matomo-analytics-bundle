@@ -1,0 +1,36 @@
+{% extends "@Contao/be_main" %}
+
+{% block main_content %}
+  <div class="tl_listing_container">
+{#    Main Content: {{ version }}#}
+  </div>
+
+  <div class="tl_listing_container">
+
+      <table class="table tl_listing showColumns">
+        <thead>
+        <tr>
+          <th class="tl_folder_tlist">{{ "browser.name" | trans }}</th>
+          <th class="tl_folder_tlist">{{ "browser.version" | trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for browser in browsers %}
+          <tr class="{% if loop.index0 is odd %}odd{% else %}even{% endif %} hover-row">
+            <td class="tl_file_list">{{ browser.label }}</td>
+            <td class="tl_file_list">{{ browser.nb_visits }}</td>
+            <td class="tl_file_list">{{ browser.nb_actions }}</td>
+            <td class="tl_file_list">{{ browser.bounce_count }}</td>
+            <td class="tl_file_list">{{ browser.nb_visits_converted }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+  </div>
+
+  <div class="tl_listing_container">
+
+   {{ dump(insight) }}
+  </div>
+{% endblock %}
