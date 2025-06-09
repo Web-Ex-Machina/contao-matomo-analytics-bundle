@@ -1,6 +1,6 @@
 {
     "name": "webexmachina/contao-matomo-analytics",
-    "version": "0.0.1-dev",
+    "version": "1.0.0",
     "description": "Contao Matomo Analytics Bundle",
     "type": "contao-bundle",
     "license": "Apache-2.0",
