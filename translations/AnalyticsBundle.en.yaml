@@ -20,7 +20,7 @@ insight:
     title: 'Recurring visitors'
     txt: 'Data on visitors who return to the site several times.'
     nb_actions_per_visit_returning: 'Number of actions'
-    bounce_rate_returning: 'Bounce rate'.
+    bounce_rate_returning: 'Bounce rate'
     nb_uniq_visitors_returning: 'unique visitors'
   other:
     title: 'Other'
