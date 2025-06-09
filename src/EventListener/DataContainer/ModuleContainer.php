@@ -32,7 +32,7 @@ readonly class ModuleContainer
         // TODO : Best solution for recup the data ?
 
         if ($objContent->analytics_remote_api_key !== '' && filter_var($objContent->analytics_remote_url, FILTER_VALIDATE_URL) !== false){
-            $list=[];
+            $list = [];
             try {
                 $response = $this->client->request(
                     'POST',

@@ -13,12 +13,6 @@ declare(strict_types=1);
 namespace WEM\MatomoBundle\Service;
 
 use Contao\CoreBundle\Controller\AbstractBackendController;
-use Contao\PageModel;
-use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use WEM\UtilsBundle\Classes\Encryption;
 
@@ -27,18 +21,9 @@ class MatomoWrapper extends AbstractBackendController
     public function __construct(
         private readonly Encryption $encryption,
         private readonly HttpClientInterface $client,
-    )
-    {
+    ) {
     }
 
-    /**
-     * @throws TransportExceptionInterface
-     * @throws ServerExceptionInterface
-     * @throws RedirectionExceptionInterface
-     * @throws DecodingExceptionInterface
-     * @throws ClientExceptionInterface
-     * @throws \Exception
-     */
     public function request(string $method, $objContent): array
     {
         if ($objContent->analytics_remote_api_key !== '' && filter_var($objContent->analytics_remote_url, FILTER_VALIDATE_URL) !== false){
@@ -54,13 +39,12 @@ class MatomoWrapper extends AbstractBackendController
                         'idSite' => $objContent->analytics_remote_id,
                         'period' => 'month',
                         'date' => 'today',
-                        'language' => $GLOBALS['TL_LANGUAGE']
+                        'language' => $GLOBALS['TL_LANGUAGE'],
                     ],
                 ],
             )->toArray();
         }
 
         throw new \Exception('Analytics API not initialized.');
-
     }
 }

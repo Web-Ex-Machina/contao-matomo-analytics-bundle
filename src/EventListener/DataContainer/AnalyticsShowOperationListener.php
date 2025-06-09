@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WEM\MatomoBundle\EventListener\DataContainer;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
