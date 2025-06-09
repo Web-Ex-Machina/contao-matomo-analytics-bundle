@@ -6,6 +6,7 @@ namespace WEM\MatomoBundle\EventListener\DataContainer;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
+use Contao\Image;
 use Contao\StringUtil;
 use Symfony\Component\Routing\RouterInterface;
 use WEM\MatomoBundle\Controller\BackendMatomoController;
@@ -34,10 +35,15 @@ readonly class AnalyticsShowOperationListener
         DataContainer $dc
     ): string
     {
-        //Image::getHtml($icon, $label)
-        if (in_array($row['id'], $rootRecordIds) && ($row['analytics_remote_id'] !== null && $row['analytics_remote_id'] !== '')) {
+        $image_light = Image::getHtml(src:"/bundles/matomo/img/reports-light.svg", alt:"Analytics",attributes: "class=color-scheme--light");
+        $image_dark = Image::getHtml(src:"/bundles/matomo/img/reports-dark.svg", alt:"Analytics",attributes: "class=color-scheme--dark");
+
+        $is_in_array = in_array($row['id'], $rootRecordIds);
+        $is_configured = ($row['analytics_remote_id'] !== null && $row['analytics_remote_id'] !== '');
+
+        if ( $is_in_array && $is_configured ) {
             $route = $this->router->generate(BackendMatomoController::class,['id'=>$row['id']]);
-            return "<a href='".$route."' title='".StringUtil::specialchars($title)."' ".$attributes.">A</a>";
+            return "<a href='".$route."' title='".StringUtil::specialchars($title)."' ".$attributes.">".$image_light.$image_dark."</a>";
         }
 
         return '';
