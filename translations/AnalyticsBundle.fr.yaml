@@ -29,6 +29,7 @@ insight:
   avg_time_dom_completion: 'Performance globale du site'
   nb_downloads: 'Nombre de téléchargements'
   analytics_remote_url: 'Consulter plus de données'
+  alert_ad_blocker: 'Attention, votre bloqueur de pub empêche le système de fonctionner correctement. Désactivez-le pour pouvoir voir les statistiques.'
 browser:
   title: 'Type de périphériques'
   txt: 'Le matériel utilisé par le visiteur pour consulter le site.'

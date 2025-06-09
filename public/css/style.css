@@ -11,16 +11,7 @@
     --color-sky-500: oklch(68.5% 0.169 237.323);
     --color-sky-700: oklch(50% 0.134 242.749);
     --color-sky-900: oklch(39.1% 0.09 240.876);
-    --color-gray-50: oklch(98.5% 0.002 247.839);
-    --color-gray-100: oklch(96.7% 0.003 264.542);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
-    --color-gray-800: oklch(27.8% 0.033 256.848);
-    --color-gray-900: oklch(21% 0.034 264.665);
     --color-neutral-50: oklch(98.5% 0 0);
-    --color-neutral-100: oklch(97% 0 0);
     --color-neutral-200: oklch(92.2% 0 0);
     --color-neutral-300: oklch(87% 0 0);
     --color-neutral-500: oklch(55.6% 0 0);
@@ -257,34 +248,9 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
-  .divide-gray-100 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-gray-100);
-    }
-  }
-  .divide-gray-200 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-gray-200);
-    }
-  }
-  .divide-gray-300 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-gray-300);
-    }
-  }
-  .divide-neutral-100 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-neutral-100);
-    }
-  }
   .divide-neutral-200 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-neutral-200);
-    }
-  }
-  .divide-neutral-300 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-neutral-300);
     }
   }
   .truncate {
@@ -306,9 +272,6 @@
   }
   .bg-\[\#eaeaec\] {
     background-color: #eaeaec;
-  }
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
   }
   .bg-neutral-50 {
     background-color: var(--color-neutral-50);
@@ -395,15 +358,6 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-  .text-gray-700 {
-    color: var(--color-gray-700);
-  }
-  .text-gray-900 {
-    color: var(--color-gray-900);
-  }
   .text-neutral-500 {
     color: var(--color-neutral-500);
   }
@@ -434,11 +388,6 @@
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .even\:bg-gray-50 {
-    &:nth-child(even) {
-      background-color: var(--color-gray-50);
-    }
   }
   .even\:bg-neutral-50 {
     &:nth-child(even) {
@@ -563,13 +512,6 @@
       padding-inline: calc(var(--spacing) * 8);
     }
   }
-  .dark\:divide-gray-700 {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      :where(& > :not(:last-child)) {
-        border-color: var(--color-gray-700);
-      }
-    }
-  }
   .dark\:divide-neutral-700 {
     &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
       :where(& > :not(:last-child)) {
@@ -582,44 +524,14 @@
       background-color: #1b1d21;
     }
   }
-  .dark\:bg-\[\#2d3748\] {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      background-color: #2d3748;
-    }
-  }
   .dark\:bg-\[\#121416\] {
     &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
       background-color: #121416;
     }
   }
-  .dark\:bg-gray-800 {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      background-color: var(--color-gray-800);
-    }
-  }
-  .dark\:bg-gray-900 {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      background-color: var(--color-gray-900);
-    }
-  }
-  .dark\:bg-neutral-900 {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      background-color: var(--color-neutral-900);
-    }
-  }
   .dark\:bg-sky-700 {
     &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
       background-color: var(--color-sky-700);
-    }
-  }
-  .dark\:text-gray-200 {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      color: var(--color-gray-200);
-    }
-  }
-  .dark\:text-gray-300 {
-    &:where([data-color-scheme=dark], [data-color-scheme=dark] *) {
-      color: var(--color-gray-300);
     }
   }
   .dark\:text-neutral-200 {
@@ -653,6 +565,14 @@
       }
     }
   }
+}
+.alert-bundle {
+  position: relative;
+  z-index: -100;
+  display: none !important;
+  height: calc(var(--spacing) * 0) !important;
+  width: calc(var(--spacing) * 0) !important;
+  opacity: 0% !important;
 }
 @property --tw-space-y-reverse {
   syntax: "*";

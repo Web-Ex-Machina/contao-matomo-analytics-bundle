@@ -1,8 +1,11 @@
 {% extends "@Contao/be_main" %}
 {% trans_default_domain 'AnalyticsBundle' %}
 {% block main_content %}
-  <div class="space-y-8 bg-[#eaeaec] -m-px dark:bg-[#121416]">
 
+  <div class="space-y-8 bg-[#eaeaec] -m-px dark:bg-[#121416]">
+    <div class="alert-bundle" style="background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; margin: 10px; padding: 10px; text-align: center; font-weight: bold; font-size: 14px;">
+      {{ "insight.alert_ad_blocker" | trans }}
+    </div>
     <div class="space-y-8">
       <div class="px-4 sm:flex sm:items-center">
         <div class="sm:flex-auto">

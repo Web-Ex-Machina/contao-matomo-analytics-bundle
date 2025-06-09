@@ -72,6 +72,12 @@ When a Matomo instance is correctly configured, the use of a cookie banner is no
 
 [Matomo : Analytics without consent or cookie banner](https://matomo.org/faq/new-to-piwik/how-do-i-use-matomo-analytics-without-consent-or-cookie-banner/)
 
+## Known Issues
+
+### I don't see the button in the list of root page actions.
+
+Disable your ad blocker.
+
 ## Support
 
 If you encounter any issues or have feature requests, please [create an issue](https://github.com/Web-Ex-Machina/contao-matomo-analytics-bundle/issues) on the GitHub repository.

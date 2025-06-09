@@ -29,6 +29,7 @@ insight:
   avg_time_dom_completion: 'Overall site performance'
   nb_downloads: 'Number of Downloads'
   analytics_remote_url: 'View more data'
+  alert_ad_blocker: 'Please note that your ad blocker prevents the system from working properly. Deactivate it to see the statistics.'
 browser:
   title: 'Type of devices'
   txt: 'The hardware used by the visitor to view the site.'

@@ -32,7 +32,7 @@ class BackendMatomoController extends AbstractBackendController
     {
         $objContent = PageModel::findById($request->get('id'));
 
-        $GLOBALS['TL_CSS'][] = '/bundles/matomo/css/analytics.css';
+        $GLOBALS['TL_CSS'][] = '/bundles/matomo/css/style.css';
 
         return $this->render('@Contao/matomo_bundle/matomo.html.twig', [
             'version' => 'Matomo ' . $matomo->request(method: 'API.getMatomoVersion', objContent: $objContent)['value'],
