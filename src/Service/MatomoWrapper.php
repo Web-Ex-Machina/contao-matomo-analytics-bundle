@@ -51,7 +51,7 @@ class MatomoWrapper extends AbstractBackendController
                         'method' => $method,
                         'format' => 'JSON',
                         'token_auth' => $this->encryption->decrypt_b64($objContent->analytics_remote_api_key),
-                        'idSite' => 20, //$objContent->analytics_remote_id,
+                        'idSite' => $objContent->analytics_remote_id,
                         'period' => 'month',
                         'date' => 'today',
                         'language' => $GLOBALS['TL_LANGUAGE']
