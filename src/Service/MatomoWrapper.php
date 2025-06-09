@@ -59,6 +59,7 @@ class MatomoWrapper extends AbstractBackendController
                 ],
             )->toArray();
         }
+
         throw new \Exception('Analytics API not initialized.');
 
     }

@@ -2,23 +2,17 @@
 
 namespace WEM\MatomoBundle\EventListener\DataContainer;
 
-use Contao\Backend;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
-use Contao\Image;
-use Contao\PageModel;
 use Contao\StringUtil;
-use Doctrine\ORM\EntityManager;
 use Symfony\Component\Routing\RouterInterface;
-
-//use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use WEM\MatomoBundle\Controller\BackendMatomoController;
 
 #[AsCallback(table: 'tl_page', target: 'list.operations.analytics.button')]
 readonly class AnalyticsShowOperationListener
 {
     public function __construct(
-        //private AuthorizationCheckerInterface $authorizationChecker,
-        private readonly RouterInterface $router,
+        private RouterInterface $router,
     ) {
     }
 
@@ -39,12 +33,11 @@ readonly class AnalyticsShowOperationListener
     ): string
     {
         //Image::getHtml($icon, $label)
-        if (in_array($row['id'], $rootRecordIds)) {
-            if ($row['analytics_remote_id'] !== null && $row['analytics_remote_id'] !== '') {
-                $route = $this->router->generate("WEM\MatomoBundle\Controller\BackendMatomoController",['id'=>$row['id']]);
-                return "<a href='".$route."' title='".StringUtil::specialchars($title)."' ".$attributes.">A</a>";
-            }
+        if (in_array($row['id'], $rootRecordIds) && ($row['analytics_remote_id'] !== null && $row['analytics_remote_id'] !== '')) {
+            $route = $this->router->generate(BackendMatomoController::class,['id'=>$row['id']]);
+            return "<a href='".$route."' title='".StringUtil::specialchars($title)."' ".$attributes.">A</a>";
         }
+
         return '';
 
     }
